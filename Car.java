@@ -1,16 +1,28 @@
-package classMethod.human;
+package practice;
 
 public class Car {
-	public int dis;
-    public double remain;
+    // 燃費（Km/L）
+    private double fuelCost;
+    // 残量（L）
+    private double fuelAmount;
 
-    public Car() {
-        dis = 20;
-        remain = 53.4;
+    // コンストラクタを作成
+    public Car(double fuelCost, double fuelAmount) {
+        this.fuelCost = fuelCost;
+        this.fuelAmount = fuelAmount;
     }
 
-    public Car(int dis, double remain) {
-        this.dis = dis;
-        this.remain = remain;
+    // moveメソッド
+    public void move(int km) {
+    	// ・"xx km 走ります"を出力
+        System.out.println(km + " km 走ります");
+        // ・残量を計算
+        this.fuelAmount -= (km / fuelCost);
     }
+
+    // fuelAmountを取得するメソッドを作成
+    public double getFuelAmount() {
+        return this.fuelAmount;
+    }
+
 }
